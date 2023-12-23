@@ -53,6 +53,7 @@ function addBookToLibrary(){
     myLibrary.push(new Book(author,title,pages,read));
     removeCard();
     displayCard();
+    reset();
 }
 function displayCard(){
     let index = 0;
@@ -81,6 +82,14 @@ function deleteCard(e){
     myLibrary.splice(e.target.id,1);
     removeCard();
     displayCard();
+}
+function reset(){
+    document.querySelector('#author').value = '';
+    document.querySelector('#title').value = '';
+    document.querySelector('#pages').value = '';
+    for (const btn of RADIO_BTN) {
+        btn.checked = false;
+    }
 }
 
 
